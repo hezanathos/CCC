@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+  background-color: #e32636;
+}
+.need{color : black ;
+  border-color : black;
+font-color : black}
+body {
+  color: #5a5a5a;
+  background-color: #fafafa;
+
+}
+
+
+.mynav .navbar-brand {
+  background: url(http://www.shakadula.com/doamhf/wp-content/uploads/2009/09/scott_the_pirate.png) (center / contain) no-repeat;
+  width: 250px;
+  mix-blend-mode: multiply;
+}

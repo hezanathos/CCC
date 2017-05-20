@@ -1,10 +1,16 @@
--# navigation styled for Bootstrap 3.0
-.container
-  %nav.navbar.navbar-dark.bg-inverse
-    %ul.nav.navbar-nav.clearfix
+%nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.mynav
+  %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  %a.navbar-brand{:href => "#"} Pirate CCC
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          Home
+          %span.sr-only (current)
       %li.nav-item
-        %button.navbar-toggler.nav-link{"aria-controls" => "exCollapsingNavbar2", "aria-expanded" => "true", "aria-label" => "Toggle navigation", "data-target" => "#exCollapsingNavbar2", "data-toggle" => "collapse", :type => "button"}
-          \ &#9776;
-    #exCollapsingNavbar2.collapse.navbar-toggleable-xs
-      = link_to "index", root_path, class: 'navbar-brand'
-      %ul.nav.navbar-nav= render 'layouts/navigation_links'
+        %a.nav-link{:href => "#"} Link
+      %li.nav-item
+        %a.nav-link.disabled{:href => "#"} Disabled
+    %form.form-inline.my-2.my-lg-0
+      %button.need.btn.btn-outline-danger.my-2.my-sm-0.need{:type => "submit"} Fight
