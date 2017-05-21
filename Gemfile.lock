@@ -146,6 +146,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.2)
+    mousetrap-rails (1.4.6)
     multi_json (1.12.1)
     nenv (0.3.0)
     nokogiri (1.7.2-x86-mingw32)
@@ -289,6 +290,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  mousetrap-rails
   pg
   rails (= 4.2.8)
   rails_apps_pages
