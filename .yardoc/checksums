@@ -1,0 +1,6 @@
+app/models/pirate.rb a3910daaf1c578f6153fce47bd7f279abc0bc557
+app/helpers/pirate_helper.rb 7cb00c3e8282d72db5097fcd9e3a235654420d52
+app/helpers/application_helper.rb 1509ca35d437b035bc11b52bc5902ff81e8ced5a
+app/controllers/pirate_controller.rb 7a0f145b2a15f1cf20408312980987144b4533d0
+app/controllers/visitors_controller.rb dd82bde280b4a49e3dddae282b2e08cdeb0c884a
+app/controllers/application_controller.rb 0eaefe456794d574f903498ecadf04207e522d12
