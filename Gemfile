@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'mousetrap-rails'
+gem 'seed_dump'
 group :development, :test do
   gem 'byebug'
 end
