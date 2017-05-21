@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pirate/new'
-  root to: 'visitors#index'
+  root to: 'pirate#index'
   get  '/create',  to: 'pirate#new'
+  post '/pirate/:id1/pirate/:id2', to: 'pirate#fight'
   resources :pirate
 end

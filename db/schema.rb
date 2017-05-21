@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520170832) do
+ActiveRecord::Schema.define(version: 20170521125843) do
 
   create_table "pirates", force: :cascade do |t|
     t.string   "name"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20170520170832) do
     t.integer  "strengh"
     t.integer  "wisdom"
     t.integer  "attackPoint"
-    t.string   "picPath"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "email"
+    t.integer  "level"
   end
 
 end

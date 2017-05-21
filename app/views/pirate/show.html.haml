@@ -1,0 +1,40 @@
+.container-fluid
+  .row
+    .col-md-6
+      %h1
+        = gravatar_for @pirate,92,92
+        .gravatar_edit
+
+      %a{:href => "http://gravatar.com/emails", :target => "_blank"} changer l'image
+
+      -   for attribute in @pirate_showlist.keys
+        %p
+          = attribute.humanize
+          = ":"
+          = @pirate.attributes[attribute].to_s
+    .col-md-6
+      %br/
+      - if @add_Points
+        %p
+          = "Vous avez level up, vous pouvez affecter 10 points pour chaque niveau."
+        %p
+          = "Pour connaitre l'utilisation de chaque stat, référrez vous à la rDoc"
+        = form_for(@pirate) do |f|
+          = f.label :strengh
+          = f.text_field :strengh, class: 'form-control'
+          = f.label :intel
+          = f.text_field :intel, class: 'form-control'
+          = f.label :wisdom
+          = f.text_field :wisdom, class: 'form-control'
+          = f.submit "Ajouter ces points", class: "btn btn-lg btn-warning text-center"
+
+
+
+
+
+
+.container-fluid.col-xs-12.text-center
+  %br/
+  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/R4NAtFoWMiY?ecver=1", :width => "560"}
+
+%p= @pirate.inspect

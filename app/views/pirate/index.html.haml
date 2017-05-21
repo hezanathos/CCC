@@ -1,0 +1,61 @@
+%h3
+  Deviens le plus grand
+  %s capitaine
+  pirate ayant jamais arpenté les mers !
+%div
+  Pour remporter le challenge des capitaines, une seule solution : deviens un pirate !
+  Pour créer ton pirate, il suffit de taper un nom. Tu pourras ensuite combattre les autres capitaines en mer ! Gagne de l'expérience, bois du rhum et éduque ton perroquet pour devenir... Le Captain !
+.container-fluid.col-lg-3.col-lg-offset-6
+  %br/
+  %form#new_pirate.new_pirate{"accept-charset" => "UTF-8", :action => "/pirate", :method => "post"}
+    %h3    Nom du pirate :
+    .container-fluid
+      .col-md-offset-8
+        %input#pirate_name.form-control.col-md-8.col-md-offset-8{:name => "pirate[name]", :type => "text"}/
+    %br/
+    %h3    Mail du pirate :
+    .container-fluid
+      .col-md-offset-8
+        %input#pirate_email.form-control.col-md-8.col-md-offset-8{:name => "pirate[email]", :type => "email"}/
+    %br/
+    %button.btn.btn-lg.btn-warning.text-center{:type => "submit"}
+      %span.glyphicon.glyphicon-flash
+      %strong Création du pirate
+      %span.glyphicon.glyphicon-flash
+    %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+    = hidden_field_tag :authenticity_token, form_authenticity_token
+.container
+  .row
+    .col-md-4
+      %h1 Liste des pirates
+      %table.table.table-bordered
+        %thead
+          %tr
+            %th pic
+            %th nom
+            %th Détruire
+            %th Désigner comme combatant n°1
+            %th Désigner comme combatant n°2
+        - for pirate in @pirates
+          %tr
+            %td= gravatar_for pirate,32,32
+            %td= link_to pirate.name, pirate
+            %td
+              = link_to pirate, method: :delete, data: { confirm: 'Voulez vous définitivement supprimer ce pirate ?' } do
+                %span.glyphicon.glyphicon-remove-circle
+            %td
+              = link_to pirate, method: :sendTofight1 do
+                %span.glyphicon.glyphicon-fire
+            %td
+              = link_to pirate, method: :sendTofight2 do
+                %span.glyphicon.glyphicon-fire
+    .col-md-4.offset-md-2
+      %h1= "L'arène"
+      %table.table.table-bordered
+        %tr
+          %th= gravatar_for @pirate1,32,32
+          %th
+            = link_to pirate_path(@pirate1).to_s+pirate_path(@pirate2).to_s, method: :fight do
+              VS
+          %th= gravatar_for @pirate2,32,32
+
