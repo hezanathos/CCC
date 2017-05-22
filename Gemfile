@@ -10,7 +10,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'mousetrap-rails'
 gem 'seed_dump'
 group :development, :test do
+  gem 'rubocop'
+  gem 'reek'
+  gem 'rails_best_practices'
   gem 'byebug'
+  gem 'haml-lint'
 end
 group :development do
   gem 'web-console', '~> 2.0'

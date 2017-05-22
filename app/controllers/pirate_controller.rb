@@ -12,7 +12,6 @@ class PirateController < ApplicationController
     keys_blacklist = %w(id created_at updated_at picpath) #these are the fields to hide
     @pirate_showlist = @pirate.attributes.except(*keys_blacklist)
     @add_Points = @pirate.attributes["strengh"]+@pirate.attributes["intel"]+@pirate.attributes["wisdom"]!=@pirate.attributes["level"]*10
-
   end
 
   def index
@@ -36,8 +35,6 @@ class PirateController < ApplicationController
     dmg1=(pirate1[:attackPoint])
     dmg2=(pirate2[:attackPoint])
 
-
-
     while(hp1>0 && hp2>0)
       @report.push "Il reste "+ hp1.to_s + "hp à "+pirate1[:name] +" et " + hp2.to_s + "hp à " + pirate2[:name]
       @report.push "et paf, "+pirate1[:name]+" cogne "+pirate2[:name] + " et lui enlève " + dmg1.to_s + "hp"
@@ -48,12 +45,6 @@ class PirateController < ApplicationController
       @report.push i.to_s
     end
   end
-
-
-#<Pirate id: 1, name: "Alex", healthPoint: 124, intel: 0, strengh: 0, wisdom: 0, attackPoint: 876, created_at:
-# "2017-05-21 15:53:38", updated_at: "2017-05-21 15:53:38", email: "hezanathos@gmail.com", level: 1>
-
-
 
   def create
     basePoints = rand(10)
@@ -70,15 +61,13 @@ class PirateController < ApplicationController
     params.require(:pirate).permit(:name, :email)
   end
 
-
   def edit
     @pirate = Pirate.find(params[:id])
   end
+
   def destroy
     @pirate = Pirate.find(params[:id]).destroy
     flash[:success] = "Pirate supprimé"
     redirect_to root_path
-
-
   end
 end
