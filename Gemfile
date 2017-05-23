@@ -1,24 +1,26 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 ruby '2.3.3'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jbuilder', '~> 2.0'
+gem 'jquery-rails'
+gem 'mousetrap-rails'
 gem 'rails', '4.2.8'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'mousetrap-rails'
 gem 'seed_dump'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug'
 end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'haml-rails'
 gem 'high_voltage'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
@@ -28,9 +30,9 @@ group :development do
   gem 'rails_apps_pages'
   gem 'rails_apps_testing'
   gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
+  gem 'rb-fchange', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false
   gem 'spring-commands-rspec'
 end
 group :development, :test do

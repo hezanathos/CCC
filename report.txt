@@ -1,0 +1,189 @@
+Inspecting 45 files
+..C.C.W..CE....C..CCCCC....C.C.CCCCC....CC...
+
+Offenses:
+
+Guardfile:67:1: C: Metrics/BlockLength: Block has too many lines. [27/25]
+guard :rspec, cmd: 'bundle exec rspec' do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+schema.rb:6:81: C: Metrics/LineLength: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+schema.rb:11:81: C: Metrics/LineLength: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+schema.rb:14:81: C: Metrics/LineLength: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+app/controllers/pirate_controller.rb:9:46: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
+  before_action :fetch_current_pirate, only: [:show,:edit,:update,:destroy]
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pirate_controller.rb:9:52: C: [Corrected] Style/SpaceAfterComma: Space missing after comma.
+  before_action :fetch_current_pirate, only: [:show,:edit,:update,:destroy]
+                                                   ^
+app/controllers/pirate_controller.rb:9:58: C: [Corrected] Style/SpaceAfterComma: Space missing after comma.
+  before_action :fetch_current_pirate, only: [:show,:edit,:update,:destroy]
+                                                         ^
+app/controllers/pirate_controller.rb:9:66: C: [Corrected] Style/SpaceAfterComma: Space missing after comma.
+  before_action :fetch_current_pirate, only: [:show,:edit,:update,:destroy]
+                                                                 ^
+app/controllers/pirate_controller.rb:40:5: W: Lint/Void: Variable @pirate used in void context.
+    @pirate
+    ^^^^^^^
+app/controllers/pirate_controller.rb:58:3: C: [Corrected] Style/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/pirate_controller.rb:63:3: C: [Corrected] Style/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/pirate_controller.rb:64:3: W: Lint/UselessAccessModifier: Useless private access modifier.
+  private
+  ^^^^^^^
+app/helpers/pirate_helper.rb:13:15: C: [Corrected] Style/AlignHash: Align the elements of a hash literal if they span more than one line.
+              height: height_var, width: width_var)
+              ^^^^^^^^^^^^^^^^^^
+app/models/pirate.rb:2:1: C: [Corrected] Style/EmptyLineAfterMagicComment: Add an empty line after magic comments.
+# Pirate model
+^
+app/models/pirate.rb:7:1: C: [Corrected] Style/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+app/models/pirate.rb:8:3: C: [Corrected] Style/LeadingCommentSpace: Missing space after #.
+  #method responsible for the building of the fight report string table
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/pirate.rb:21:23: C: [Corrected] Style/MultilineOperationIndentation: Align the operands of an expression spanning multiple lines.
+                      hp2.to_s + "hp \xC3\xA0 " + name2
+                      ^^^^^^^^
+app/models/pirate.rb:23:23: C: [Corrected] Style/MultilineOperationIndentation: Align the operands of an expression spanning multiple lines.
+                      " et lui enl\xC3\xA8ve " + dmg1.to_s + 'hp'
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/pirate.rb:25:23: C: [Corrected] Style/MultilineOperationIndentation: Align the operands of an expression spanning multiple lines.
+                      " et lui enl\xC3\xA8ve " + dmg2.to_s + 'hp'
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/pirate.rb:37:8: E: unexpected token kDEF
+(Using Ruby 2.3 parser; configure using TargetRubyVersion parameter, under AllCops)
+  end  def birth
+       ^^^
+app/models/pirate.rb:39:1: C: [Corrected] Style/EmptyLines: Extra blank line detected.
+app/models/pirate.rb:40:1: C: [Corrected] Style/EmptyLines: Extra blank line detected.
+app/models/pirate.rb:41:1: C: [Corrected] Style/EmptyLines: Extra blank line detected.
+app/models/pirate.rb:42:3: C: [Corrected] Style/EmptyLineBetweenDefs: Use empty lines between method definitions.
+  def birth
+  ^^^
+app/models/pirate.rb:50:3: C: [Corrected] Style/IndentationWidth: Use 2 (not 1) spaces for indentation.
+   return self.attributes['strengh'] + self.attributes['intel'] +
+  ^
+app/models/pirate.rb:50:4: C: [Corrected] Style/RedundantReturn: Redundant return detected.
+   return self.attributes['strengh'] + self.attributes['intel'] +
+   ^^^^^^
+app/models/pirate.rb:50:11: C: [Corrected] Style/RedundantSelf: Redundant self detected.
+   return self.attributes['strengh'] + self.attributes['intel'] +
+          ^^^^^^^^^^^^^^^
+app/models/pirate.rb:50:40: C: [Corrected] Style/RedundantSelf: Redundant self detected.
+   return self.attributes['strengh'] + self.attributes['intel'] +
+                                       ^^^^^^^^^^^^^^^
+app/models/pirate.rb:51:8: C: [Corrected] Style/MultilineOperationIndentation: Align the operands of a condition in a return statement spanning multiple lines.
+       self.attributes['wisdom'] != self.attributes['level'] * 10
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/pirate.rb:51:8: C: [Corrected] Style/RedundantSelf: Redundant self detected.
+       self.attributes['wisdom'] != self.attributes['level'] * 10
+       ^^^^^^^^^^^^^^^
+app/models/pirate.rb:51:37: C: [Corrected] Style/RedundantSelf: Redundant self detected.
+       self.attributes['wisdom'] != self.attributes['level'] * 10
+                                    ^^^^^^^^^^^^^^^
+config/application.rb:12:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Application < Rails::Application
+  ^^^^^
+config/application.rb:24:81: C: Metrics/LineLength: Line is too long. [82/80]
+    # Settings in config/environments/* take precedence over those specified here.
+                                                                                ^^
+config/application.rb:28:81: C: Metrics/LineLength: Line is too long. [99/80]
+    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+                                                                                ^^^^^^^^^^^^^^^^^^^
+config/application.rb:29:81: C: Metrics/LineLength: Line is too long. [89/80]
+    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+                                                                                ^^^^^^^^^
+config/application.rb:32:81: C: Metrics/LineLength: Line is too long. [98/80]
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+                                                                                ^^^^^^^^^^^^^^^^^^
+config/application.rb:33:81: C: Metrics/LineLength: Line is too long. [87/80]
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+                                                                                ^^^^^^^
+config/environments/development.rb:4:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:32:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:4:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:36:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:40:81: C: Metrics/LineLength: Line is too long. [102/80]
+  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:46:81: C: Metrics/LineLength: Line is too long. [96/80]
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:66:81: C: Metrics/LineLength: Line is too long. [100/80]
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:4:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/initializers/assets.rb:12:81: C: Metrics/LineLength: Line is too long. [93/80]
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+                                                                                ^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:4:81: C: Metrics/LineLength: Line is too long. [107/80]
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:7:81: C: Metrics/LineLength: Line is too long. [112/80]
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/session_store.rb:5:81: C: Metrics/LineLength: Line is too long. [85/80]
+Rails.application.config.session_store :cookie_store, key: '_rails-bootstrap_session'
+                                                                                ^^^^^
+config/initializers/wrap_parameters.rb:8:81: C: Metrics/LineLength: Line is too long. [96/80]
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+                                                                                ^^^^^^^^^^^^^^^^
+db/migrate/20170521114518_add_email_to_pirate.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddEmailToPirate < ActiveRecord::Migration
+^^^^^
+db/migrate/20170521123559_remove_pic_path_from_pirates.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class RemovePicPathFromPirates < ActiveRecord::Migration
+^^^^^
+db/migrate/20170521125843_add_level_to_pirate.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddLevelToPirate < ActiveRecord::Migration
+^^^^^
+db/schema.rb:6:81: C: Metrics/LineLength: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+db/schema.rb:11:81: C: Metrics/LineLength: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+db/schema.rb:14:81: C: Metrics/LineLength: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+db/seeds.rb:4:81: C: Metrics/LineLength: Line is too long. [142/80]
+                 { name: 'Alex', healthPoint: 500, intel: 0, strengh: 0, wisdom: 0, attackPoint: 2, email: 'hezanathos@gmail.com', level: 1 },
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:5:81: C: Metrics/LineLength: Line is too long. [150/80]
+                 { name: 'Barbe Rousse', healthPoint: 200, intel: 0, strengh: 0, wisdom: 0, attackPoint: 5, email: 'alex.lecoq@orange.com', level: 1 }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:8:81: C: Metrics/LineLength: Line is too long. [86/80]
+abort('The Rails environment is running in production mode!') if Rails.env.production?
+                                                                                ^^^^^^
+spec/rails_helper.rb:25:5: C: Rails/FilePath: Please use Rails.root.join('path', 'to') instead.
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:3:81: C: Metrics/LineLength: Line is too long. [92/80]
+# This file was generated by the `rails generate rspec:install` command. Conventionally, all
+                                                                                ^^^^^^^^^^^^
+spec/spec_helper.rb:90:81: C: Metrics/LineLength: Line is too long. [81/80]
+  #   # order dependency and want to debug it, you can fix the order by providing
+                                                                                ^
+spec/spec_helper.rb:97:81: C: Metrics/LineLength: Line is too long. [81/80]
+  #   # test failures related to randomization by passing the same `--seed` value
+                                                                                ^
+
+45 files inspected, 63 offenses detected, 24 offenses corrected
