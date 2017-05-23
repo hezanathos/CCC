@@ -1,11 +1,18 @@
+%br/
+%br/
 %h3
   Deviens le plus grand
   %s capitaine
   pirate ayant jamais arpenté les mers !
 %div
+
   Pour remporter le challenge des capitaines, une seule solution : deviens un pirate !
-  Pour créer ton pirate, il suffit de taper un nom. Tu pourras ensuite combattre les autres capitaines en mer ! Gagne de l'expérience, bois du rhum et éduque ton perroquet pour devenir... Le Captain !
+  Pour créer ton pirate, il suffit de taper un nom.
+  %br/
+  Tu pourras ensuite combattre les autres capitaines en mer ! Gagne de l'expérience, bois du rhum et éduque ton perroquet pour devenir... Le Captain !
 .container-fluid.col-lg-3.col-lg-offset-6
+  %br/
+  %br/
   %br/
   %form#new_pirate.new_pirate{"accept-charset" => "UTF-8", :action => "/pirate", :method => "post"}
     %h3    Nom du pirate :
@@ -24,6 +31,8 @@
       %span.glyphicon.glyphicon-flash
     %input{:name => "utf8", :type => "hidden", :value => "✓"}/
     = hidden_field_tag :authenticity_token, form_authenticity_token
+%br/
+%br/
 .container
   .row
     .col-md-4
