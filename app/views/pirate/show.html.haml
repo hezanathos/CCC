@@ -14,9 +14,9 @@
           = @pirate.attributes[attribute].to_s
     .col-md-6
       %br/
-      - if @add_Points
+      - if @addPoints
         %p
-          = "Vous avez level up, vous pouvez affecter 10 points pour chaque niveau."
+          = 'Vous avez level up, vous pouvez affecter 10 points pour chaque niveau.'
         %p
           = "Pour connaitre l'utilisation de chaque stat, référrez vous à la rDoc"
         = form_for(@pirate) do |f|
@@ -26,7 +26,7 @@
           = f.text_field :intel, class: 'form-control'
           = f.label :wisdom
           = f.text_field :wisdom, class: 'form-control'
-          = f.submit "Ajouter ces points", class: "btn btn-lg btn-warning text-center"
+          = f.submit 'Ajouter ces points', class: 'btn btn-lg btn-warning text-center'
 
 
 
