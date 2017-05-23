@@ -15,6 +15,7 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'byebug'
   gem 'haml-lint'
+  gem 'traceroute'
 end
 group :development do
   gem 'web-console', '~> 2.0'
