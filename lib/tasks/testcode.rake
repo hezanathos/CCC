@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :testcode do
   unless Rails.env == 'production'
     require 'rspec/core/rake_task'
@@ -25,7 +27,7 @@ namespace :testcode do
     desc 'Execute haml-lint'
     task haml_lint: :environment do
       puts 'HAML-LINT'
-      puts %x(haml-lint .)
+      puts `haml-lint .`
     end
 
     desc 'Execute rails_best_practices'
@@ -40,5 +42,5 @@ namespace :testcode do
 end
 
 task :testcode do
-  %w(rubocop haml_lint reek rbp spec).each { |task| Rake::Task["testcode:#{task}"].invoke }
+  %w[rubocop haml_lint reek rbp spec].each { |task| Rake::Task["testcode:#{task}"].invoke }
 end

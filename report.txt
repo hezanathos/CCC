@@ -1,0 +1,130 @@
+Inspecting 45 files
+.CC.C.....C....C..CCCCC....C.C.CCCCC....CC...
+
+Offenses:
+
+Gemfile:1:1: C: Style/FileName: The name of this source file (Gemfile) should use snake_case.
+# frozen_string_literal: true
+^
+Guardfile:1:1: C: Style/FileName: The name of this source file (Guardfile) should use snake_case.
+# frozen_string_literal: true
+^
+Guardfile:67:1: C: Metrics/BlockLength: Block has too many lines. [27/25]
+guard :rspec, cmd: 'bundle exec rspec' do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+schema.rb:6:81: C: Metrics/LineLength: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+schema.rb:11:81: C: Metrics/LineLength: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+schema.rb:14:81: C: Metrics/LineLength: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+app/models/pirate.rb:9:3: C: Metrics/AbcSize: Assignment Branch Condition size for report_builder is too high. [38.68/15]
+  def self.report_builder(pirate1, pirate2)
+  ^^^
+app/models/pirate.rb:9:3: C: Metrics/MethodLength: Method has too many lines. [21/10]
+  def self.report_builder(pirate1, pirate2) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/pirate.rb:37:81: C: Metrics/LineLength: Line is too long. [90/80]
+                      attackPoint: base_points, intel: 0, wisdom: 0, strengh: 0, level: 1)
+                                                                                ^^^^^^^^^^
+config/application.rb:12:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Application < Rails::Application
+  ^^^^^
+config/application.rb:24:81: C: Metrics/LineLength: Line is too long. [82/80]
+    # Settings in config/environments/* take precedence over those specified here.
+                                                                                ^^
+config/application.rb:28:81: C: Metrics/LineLength: Line is too long. [99/80]
+    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+                                                                                ^^^^^^^^^^^^^^^^^^^
+config/application.rb:29:81: C: Metrics/LineLength: Line is too long. [89/80]
+    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+                                                                                ^^^^^^^^^
+config/application.rb:32:81: C: Metrics/LineLength: Line is too long. [98/80]
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+                                                                                ^^^^^^^^^^^^^^^^^^
+config/application.rb:33:81: C: Metrics/LineLength: Line is too long. [87/80]
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+                                                                                ^^^^^^^
+config/environments/development.rb:4:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:32:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:4:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:36:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:40:81: C: Metrics/LineLength: Line is too long. [102/80]
+  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:46:81: C: Metrics/LineLength: Line is too long. [96/80]
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:66:81: C: Metrics/LineLength: Line is too long. [100/80]
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:4:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/initializers/assets.rb:12:81: C: Metrics/LineLength: Line is too long. [93/80]
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+                                                                                ^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:4:81: C: Metrics/LineLength: Line is too long. [107/80]
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:7:81: C: Metrics/LineLength: Line is too long. [112/80]
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/session_store.rb:5:81: C: Metrics/LineLength: Line is too long. [85/80]
+Rails.application.config.session_store :cookie_store, key: '_rails-bootstrap_session'
+                                                                                ^^^^^
+config/initializers/wrap_parameters.rb:8:81: C: Metrics/LineLength: Line is too long. [96/80]
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+                                                                                ^^^^^^^^^^^^^^^^
+db/migrate/20170521114518_add_email_to_pirate.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddEmailToPirate < ActiveRecord::Migration
+^^^^^
+db/migrate/20170521123559_remove_pic_path_from_pirates.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class RemovePicPathFromPirates < ActiveRecord::Migration
+^^^^^
+db/migrate/20170521125843_add_level_to_pirate.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddLevelToPirate < ActiveRecord::Migration
+^^^^^
+db/seeds.rb:4:81: C: Metrics/LineLength: Line is too long. [142/80]
+                 { name: 'Alex', healthPoint: 500, intel: 0, strengh: 0, wisdom: 0, attackPoint: 2, email: 'hezanathos@gmail.com', level: 1 },
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:5:81: C: Metrics/LineLength: Line is too long. [150/80]
+                 { name: 'Barbe Rousse', healthPoint: 200, intel: 0, strengh: 0, wisdom: 0, attackPoint: 5, email: 'alex.lecoq@orange.com', level: 1 }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/testcode.rake:3:1: C: Metrics/BlockLength: Block has too many lines. [31/25]
+namespace :testcode do ...
+^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/testcode.rake:22:81: C: Metrics/LineLength: Line is too long. [105/80]
+      tsk.source_files = FileList.new('app/**/*.rb', 'lib/**/*.rb', 'lib/tasks/*.rake', 'config/**/*.rb')
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/testcode.rake:45:81: C: Metrics/LineLength: Line is too long. [91/80]
+  %w[rubocop haml_lint reek rbp spec].each { |task| Rake::Task["testcode:#{task}"].invoke }
+                                                                                ^^^^^^^^^^^
+spec/rails_helper.rb:8:81: C: Metrics/LineLength: Line is too long. [86/80]
+abort('The Rails environment is running in production mode!') if Rails.env.production?
+                                                                                ^^^^^^
+spec/rails_helper.rb:25:5: C: Rails/FilePath: Please use Rails.root.join('path', 'to') instead.
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/spec_helper.rb:3:81: C: Metrics/LineLength: Line is too long. [92/80]
+# This file was generated by the `rails generate rspec:install` command. Conventionally, all
+                                                                                ^^^^^^^^^^^^
+spec/spec_helper.rb:90:81: C: Metrics/LineLength: Line is too long. [81/80]
+  #   # order dependency and want to debug it, you can fix the order by providing
+                                                                                ^
+spec/spec_helper.rb:97:81: C: Metrics/LineLength: Line is too long. [81/80]
+  #   # test failures related to randomization by passing the same `--seed` value
+                                                                                ^
+
+45 files inspected, 41 offenses detected
