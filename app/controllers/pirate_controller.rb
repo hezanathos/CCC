@@ -14,11 +14,12 @@ class PirateController < ApplicationController
   end
 
   def update
-    pirate.levelup
-    if @pirate.save
-      redirect_to @pirate
+
+    if @pirate.levelup levelup_params[:strengh], levelup_params[:intel], levelup_params[:wisdom]
+    redirect_to @pirate
     else
-      render '/index'
+      flash[:error] = "invalid stats"
+      redirect_to @pirate
     end
   end
 
@@ -57,6 +58,10 @@ class PirateController < ApplicationController
 
   def pirate_params
     params.require(:pirate).permit(:name, :email)
+  end
+
+  def levelup_params
+    params.require(:pirate).permit(:strengh, :intel, :wisdom)
   end
 
   def fetch_current_pirate

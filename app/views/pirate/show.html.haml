@@ -20,6 +20,7 @@
         %p
           = "Pour connaitre l'utilisation de chaque stat, référrez vous à la rDoc"
         = form_for(@pirate) do |f|
+          = render 'shared/error_messages'
           = f.label :strengh
           = f.text_field :strengh, class: 'form-control'
           = f.label :intel
@@ -33,8 +34,8 @@
 
 
 
+
 .container-fluid.col-xs-12.text-center
   %br/
   %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/R4NAtFoWMiY?ecver=1", :width => "560"}
-
-%p= @pirate.inspect
+    

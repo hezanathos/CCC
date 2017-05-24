@@ -11,8 +11,8 @@ class Pirate < ActiveRecord::Base
     i = 0
     hp1 = pirate1[:healthPoint]
     hp2 = pirate2[:healthPoint]
-    dmg1 = (pirate1[:attackPoint])
-    dmg2 = (pirate2[:attackPoint])
+    dmg1 = (pirate1[:attackPoint]) + pirate1[:strengh]
+    dmg2 = (pirate2[:attackPoint]) + pirate2[:strengh]
     name1 = pirate1[:name]
     name2 = pirate2[:name]
 
@@ -20,15 +20,36 @@ class Pirate < ActiveRecord::Base
       report.push 'Il reste ' + hp1.to_s + "hp \xC3\xA0 " + name1 + ' et ' +
                   hp2.to_s + "hp \xC3\xA0 " + name2
       report.push 'et paf, ' + name1 + ' cogne ' + name2 +
-                  " et lui enl\xC3\xA8ve " + dmg1.to_s + 'hp'
+                  " et lui retire " + dmg1.to_s + 'hp'
       report.push 'et vlan, ' + name2 + ' cogne ' + name1 +
-                  " et lui enl\xC3\xA8ve " + dmg2.to_s + 'hp'
+                  " et lui retire " + dmg2.to_s + 'hp'
       hp1 -=  dmg2
       hp2 -=  dmg1
       i += 1
       report.push i.to_s
     end
+    winner = pirate2
+    if hp1.positive?
+      winner = pirate1
+    end
+    report.push "le vainqueur est " + winner[name]
+    winner.wisdom_challenge
+
+
+
+
+
+
     report
+  end
+
+  #this method decides if the pirate will levelup after a won fight. More chance of leveling the pirate is wise
+  def wisdom_challenge
+    if rand(100) > 90-wisdom
+      self[:level] += 1
+      save
+    end
+
   end
 
   def birth
@@ -43,4 +64,15 @@ class Pirate < ActiveRecord::Base
     attributes['strengh'] + attributes['intel'] +
       attributes['wisdom'] != attributes['level'] * 10
   end
+
+  def levelup(str,int,wisd)
+    if str.to_i + int.to_i + wisd.to_i == self[:level] *10 - (self[:wisdom] + self[:strengh] + self[:intel] )
+      self[:wisdom] += wisd.to_i
+      self[:strengh] += str.to_i
+      self[:intel] += int.to_i
+      return save
+    end
+    else
+    return false
+    end
 end
