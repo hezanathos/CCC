@@ -53,10 +53,10 @@
               = link_to pirate, method: :delete, data: { confirm: 'Voulez vous définitivement supprimer ce pirate ?' } do
                 %span.glyphicon.glyphicon-remove-circle
             %td
-              = link_to pirate, method: :sendTofight1 do
+              = link_to "/fight1"+pirate_path(pirate).to_s, method: :send_to_fight1 do
                 %span.glyphicon.glyphicon-fire
             %td
-              = link_to pirate, method: :sendTofight2 do
+              = link_to "/fight2"+pirate_path(pirate).to_s, method: :send_to_fight2 do
                 %span.glyphicon.glyphicon-fire
     .col-md-4.offset-md-2
       %h1= "L'arène"
@@ -67,4 +67,4 @@
             = link_to pirate_path(@pirate1).to_s+pirate_path(@pirate2).to_s, method: :fight do
               VS
           %th= gravatar_for @pirate2,32,32
-
+%p= @pirate1.inspect

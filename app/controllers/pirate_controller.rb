@@ -6,7 +6,7 @@
 # @author Alex Lecoq
 # @since 0.0.0
 class PirateController < ApplicationController
-  before_action :fetch_current_pirate, only: %i[show edit update destroy]
+  before_action :fetch_current_pirate, only: %i[show edit update destroy send_to_fight2 send_to_fight1]
 
   def show
     keys_blacklist = %w[id created_at updated_at] # these are the fields to hide
@@ -14,19 +14,20 @@ class PirateController < ApplicationController
   end
 
   def update
-
     if @pirate.levelup levelup_params[:strengh], levelup_params[:intel], levelup_params[:wisdom]
-    redirect_to @pirate
+      redirect_to @pirate
     else
-      flash[:error] = "invalid stats"
+      flash[:error] = 'invalid stats'
       redirect_to @pirate
     end
   end
 
   def index
     @pirates = Pirate.all
-    @pirate1 = Pirate.find(1) if @pirate1.nil?
-    @pirate2 = Pirate.find(2) if @pirate2.nil?
+    @pirate1 = Pirate.find(1) if session[:pirate1].nil?
+    @pirata2 = Pirate.find(2) if session[:pirate2].nil?
+    @pirate1 = Pirate.find(session[:pirate1]) unless session[:pirate1].nil?
+    @pirate2 = Pirate.find(session[:pirate2]) unless session[:pirate2].nil?
   end
 
   def fight
@@ -51,6 +52,16 @@ class PirateController < ApplicationController
 
   def destroy
     flash[:success] = 'Pirate supprimé'
+    redirect_to root_path
+  end
+
+  def send_to_fight1
+    session[:pirate1] = @pirate[:id]
+    redirect_to root_path
+  end
+
+  def send_to_fight2
+    session[:pirate2] = @pirate[:id]
     redirect_to root_path
   end
 

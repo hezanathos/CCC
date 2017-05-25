@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Migration for email support ( for gravatar purpose )
 #
 # @author Alex Lecoq
