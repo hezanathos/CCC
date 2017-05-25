@@ -24,8 +24,8 @@ class PirateController < ApplicationController
 
   def index
     @pirates = Pirate.all
-    @pirate1 = Pirate.find(1) if session[:pirate1].nil?
-    @pirata2 = Pirate.find(2) if session[:pirate2].nil?
+    @pirate1 = Pirate.first if session[:pirate1].nil?
+    @pirata2 = Pirate.second if session[:pirate2].nil?
     @pirate1 = Pirate.find(session[:pirate1]) unless session[:pirate1].nil?
     @pirate2 = Pirate.find(session[:pirate2]) unless session[:pirate2].nil?
   end
@@ -33,16 +33,18 @@ class PirateController < ApplicationController
   def fight
     pirate1 = Pirate.find(params[:id1])
     pirate2 = Pirate.find(params[:id2])
-    @report = Pirate.report_builder pirate1, pirate2
+    @report = Pirate.report_builder pirate1, pirate2, session[:shield_or_parrot1], session[:shield_or_parrot2]
   end
 
   def create
+
     @pirate = Pirate.new pirate_params
     success = @pirate.birth
     if success
       redirect_to @pirate
     else
-      render '/index'
+      flash[:error] = 'Cet email est déjà attribué'
+      redirect_to root_path
     end
   end
 
@@ -51,17 +53,44 @@ class PirateController < ApplicationController
   end
 
   def destroy
+    session[:pirate1] = Pirate.first[:id] if  session[:pirate1] == @pirate[:id]
+    session[:pirate2] = Pirate.first[:id] if  session[:pirate2] == @pirate[:id]
+    @pirate.destroy
     flash[:success] = 'Pirate supprimé'
+
     redirect_to root_path
   end
 
   def send_to_fight1
     session[:pirate1] = @pirate[:id]
+    session[:shield_or_parrot1] = 0
     redirect_to root_path
   end
 
   def send_to_fight2
     session[:pirate2] = @pirate[:id]
+    session[:shield_or_parrot2] = 0
+    redirect_to root_path
+  end
+
+  def shield
+    if params[:id].to_i == 1
+    session[:shield_or_parrot1] = 1
+    end
+    if params[:id].to_i == 2
+      session[:shield_or_parrot2] = 1
+    end
+    redirect_to root_path
+  end
+
+  def parrot
+    if params[:id].to_i == 1
+      session[:shield_or_parrot1] = 2
+    end
+
+    if params[:id].to_i == 2
+      session[:shield_or_parrot2] = 2
+    end
     redirect_to root_path
   end
 
