@@ -37,7 +37,6 @@ class PirateController < ApplicationController
   end
 
   def create
-
     @pirate = Pirate.new pirate_params
     success = @pirate.birth
     if success
@@ -74,23 +73,15 @@ class PirateController < ApplicationController
   end
 
   def shield
-    if params[:id].to_i == 1
-    session[:shield_or_parrot1] = 1
-    end
-    if params[:id].to_i == 2
-      session[:shield_or_parrot2] = 1
-    end
+    session[:shield_or_parrot1] = 1 if params[:id].to_i == 1
+    session[:shield_or_parrot2] = 1 if params[:id].to_i == 2
     redirect_to root_path
   end
 
   def parrot
-    if params[:id].to_i == 1
-      session[:shield_or_parrot1] = 2
-    end
+    session[:shield_or_parrot1] = 2 if params[:id].to_i == 1
 
-    if params[:id].to_i == 2
-      session[:shield_or_parrot2] = 2
-    end
+    session[:shield_or_parrot2] = 2 if params[:id].to_i == 2
     redirect_to root_path
   end
 
