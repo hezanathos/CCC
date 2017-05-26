@@ -54,6 +54,7 @@ class Pirate < ActiveRecord::Base
       report.push name1 + ' récupère ' + int1.to_s + 'hp et ' +
                       name2 + ' récupère ' +
                   int2.to_s + 'hp'
+      report.push "Le soleil tappe sur le pont, chaque pirate perd"+i.to_s+"hp"
 
       if shield_or_parrot1 == 2 && pirate1.int_challenge?
         report.push 'le perroquet de ' + name1 + ' se change en party
@@ -72,8 +73,8 @@ class Pirate < ActiveRecord::Base
       report.push '      '
       report.push '___________________________'
       report.push '      '
-      hp1 -=  dmg2 - int1
-      hp2 -=  dmg1 - int2
+      hp1 -=  dmg2 + i - int1
+      hp2 -=  dmg1 + i  - int2
       i += 1
 
     end
