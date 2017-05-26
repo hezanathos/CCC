@@ -59,7 +59,7 @@ class Pirate < ActiveRecord::Base
       if shield_or_parrot1 == 2 && pirate1.int_challenge?
         report.push 'le perroquet de ' + name1 + ' se change en party
                            parrot, cela blesse ' + name2
-        report.push 'il perd ' + int1 + ' hp'
+        report.push 'il perd ' + int1.to_s + ' hp'
         hp2 -= int1
       end
 
@@ -81,7 +81,7 @@ class Pirate < ActiveRecord::Base
     winner = pirate2
     winner = pirate1 if hp1.positive?
     report.push 'le vainqueur est ' + winner[:name].to_s
-    report.push winner[:name].to_s + 'gagne un niveau !' if winner.wisdom_challenge?
+    report.push winner[:name].to_s + ' gagne un niveau !' if winner.wisdom_challenge?
 
     report
   end

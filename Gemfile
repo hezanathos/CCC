@@ -11,8 +11,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'seed_dump'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'puma'
 group :development, :test do
-  gem 'byebug'
   gem 'haml-lint'
   gem 'rails_best_practices'
   gem 'reek'
@@ -49,7 +49,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'puma'
 end
 group :test do
   gem 'capybara'
