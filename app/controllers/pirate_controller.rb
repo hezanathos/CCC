@@ -25,7 +25,7 @@ class PirateController < ApplicationController
   def index
     @pirates = Pirate.all
     @pirate1 = Pirate.first if session[:pirate1].nil?
-    @pirata2 = Pirate.second if session[:pirate2].nil?
+    @pirate2 = Pirate.second if session[:pirate2].nil?
     @pirate1 = Pirate.find(session[:pirate1]) unless session[:pirate1].nil?
     @pirate2 = Pirate.find(session[:pirate2]) unless session[:pirate2].nil?
   end
